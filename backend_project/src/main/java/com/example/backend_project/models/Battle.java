@@ -20,7 +20,7 @@ public class Battle {
 
     public Battle(String location) {
         this.id = id;
-        this.monster = RANDOM;
+        //this.monster = RANDOM;
         this.location = location;
         this.isVictorious = false;
     }
