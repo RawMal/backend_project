@@ -1,16 +1,21 @@
 package com.example.backend_project.models;
 
+import com.example.backend_project.services.MonsterService;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Entity (name = "battles")
 public class Battle {
+    @Autowired
+    MonsterService monsterService;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //@Column(name = "monster")
-    //private Monster monster;
+    @Column(name = "monster")
+    private Monster monster;
 
     @Column(name = "location")
     private String location;
@@ -18,8 +23,9 @@ public class Battle {
     @Column(name = "is_victorious")
     private boolean isVictorious;
 
+
     public Battle(String location) {
-        //this.monster = RANDOM;
+        this.monster = monsterService.getRandomMonster();
         this.location = location;
         this.isVictorious = false;
     }
@@ -36,13 +42,13 @@ public class Battle {
         this.id = id;
     }
 
-    /*public Monster getMonster() {
+    public Monster getMonster() {
     return monster;
     }
 
     public void setMonster(Monster monster) {
         this.monster = monster;
-    }*/
+    }
 
     public String getLocation() {
         return location;
