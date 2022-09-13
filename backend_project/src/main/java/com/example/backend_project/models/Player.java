@@ -19,7 +19,6 @@ public class Player {
 
 
     public Player (String name, int level){
-        this.id = id;
         this.name = name;
         this.level = level;
         this.numberOfWins = 0;

@@ -9,8 +9,8 @@ public class Battle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "monster")
-    private Monster monster;
+    //@Column(name = "monster")
+    //private Monster monster;
 
     @Column(name = "location")
     private String location;
@@ -19,7 +19,6 @@ public class Battle {
     private boolean isVictorious;
 
     public Battle(String location) {
-        this.id = id;
         //this.monster = RANDOM;
         this.location = location;
         this.isVictorious = false;
@@ -37,13 +36,13 @@ public class Battle {
         this.id = id;
     }
 
-    public Monster getMonster() {
-        return monster;
+    /*public Monster getMonster() {
+    return monster;
     }
 
     public void setMonster(Monster monster) {
         this.monster = monster;
-    }
+    }*/
 
     public String getLocation() {
         return location;

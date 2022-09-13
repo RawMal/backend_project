@@ -19,7 +19,6 @@ public class Monster {
     private boolean isAlive;
 
     public Monster(String type, int level) {
-        this.id = id;
         this.type = type;
         this.level = level;
         this.isAlive = true;
