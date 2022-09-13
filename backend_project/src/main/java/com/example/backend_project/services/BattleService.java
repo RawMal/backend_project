@@ -28,6 +28,11 @@ public class BattleService {
         return countVictoriousBattles() == 3;
 
     }
+//    public Reply combatStart(Battle battle)
+////            """ a reply object which says: you are in a forest and encounter a wolf
+////"""
+//            String.format("you are in a %s and encounter a %s",battle.getlocation(),battle.getmonster())
+//    )
 
     public Reply combatOutcome(Player player, Battle battle) {
         if (player.getLevel() > battle.getMonster().getLevel()) {

@@ -50,6 +50,17 @@ public class DataLoader implements ApplicationRunner {
 
     }
 
+//    post request /games = a message saying : welcome to the game...
+
+//    after defeating a monster, the player gets a random amount of gold
+
+//    context message when encountering a new monster
+
+//    they can buy weapons (with a certain weapon level) using the gold they have
+
+//    patch request - is used to change the weapon level of the player.
+
+//    Another extension: adding health/different attacks
 
 
 
