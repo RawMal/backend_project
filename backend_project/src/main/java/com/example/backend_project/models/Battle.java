@@ -1,31 +1,34 @@
 package com.example.backend_project.models;
 
 import com.example.backend_project.services.MonsterService;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 
 @Entity (name = "battles")
 public class Battle {
-    @Autowired
-    MonsterService monsterService;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "monster")
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "monster_id")
+    @JsonIgnoreProperties({"battles"})
     private Monster monster;
 
     @Column(name = "location")
     private String location;
 
-    @Column(name = "victorious")
+    @Column(name = "is_victorious")
     private boolean isVictorious;
 
 
     public Battle(String location) {
-        this.monster = monsterService.getRandomMonster();
+        // TODO fix this get Random Monster method
+//        this.monster = monsterService.getRandomMonster();
+        this.monster = new Monster("wolf",1);
         this.location = location;
         this.isVictorious = false;
     }

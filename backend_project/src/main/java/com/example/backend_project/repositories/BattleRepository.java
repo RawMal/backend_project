@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface BattleRepository extends JpaRepository<Battle, Long> {
 
-    List<Battle> countByVictoriousTrue();
+    List<Battle> countByIsVictoriousTrue();
 
 }

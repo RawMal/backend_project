@@ -5,7 +5,6 @@ import com.example.backend_project.models.Battle;
 import com.example.backend_project.models.Monster;
 import com.example.backend_project.models.Player;
 import com.example.backend_project.repositories.BattleRepository;
-import com.example.backend_project.repositories.GameRepository;
 import com.example.backend_project.repositories.MonsterRepository;
 import com.example.backend_project.repositories.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.MonthDay;
 import java.util.Arrays;
 
 @Component
@@ -21,8 +19,7 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     BattleRepository battleRepository;
-    @Autowired
-    GameRepository gameRepository;
+
     @Autowired
     MonsterRepository monsterRepository;
     @Autowired

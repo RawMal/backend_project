@@ -1,5 +1,6 @@
 package com.example.backend_project.models;
 
+import javax.persistence.Entity;
 import java.util.ArrayList;
 import java.util.List;
 

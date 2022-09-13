@@ -8,6 +8,8 @@ import com.example.backend_project.repositories.BattleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class BattleService {
 
@@ -17,6 +19,7 @@ public class BattleService {
     @Autowired
     BattleRepository battleRepository;
 
+    public Optional<Battle> getBattleById(Long id){return battleRepository.findById(id);}
 
     public Reply combatOutcome(Player player, Battle battle) {
         if (player.getLevel() > battle.getMonster().getLevel()) {

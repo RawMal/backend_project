@@ -1,6 +1,10 @@
 package com.example.backend_project.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "monsters")
 public class Monster {
@@ -18,10 +22,15 @@ public class Monster {
     @Column(name = "is_alive")
     private boolean isAlive;
 
+    @OneToMany(mappedBy = "monster")
+    @JsonIgnoreProperties({"monster"})
+    private List<Battle> battles;
+
     public Monster(String type, int level) {
         this.type = type;
         this.level = level;
         this.isAlive = true;
+        this.battles = new ArrayList<>();
     }
 
     public Monster(){
@@ -58,5 +67,13 @@ public class Monster {
 
     public void setAlive(boolean alive) {
         isAlive = alive;
+    }
+
+    public List<Battle> getBattles() {
+        return battles;
+    }
+
+    public void setBattles(List<Battle> battles) {
+        this.battles = battles;
     }
 }
