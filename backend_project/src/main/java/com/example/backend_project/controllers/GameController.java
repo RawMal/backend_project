@@ -36,10 +36,8 @@ public class GameController {
     @GetMapping
     public ResponseEntity<Reply> battleOutcome(@RequestParam long playerId,@RequestParam long battleId){
         Player player = playerService.getPlayerById(playerId).get();
-        Battle battle = battleService.getBattleById(playerId).get();
-        battleService.combatOutcome(player,battle);
-        gameService.checkWinCondition();
-        return new ResponseEntity<>(null, HttpStatus.OK);
+        Battle battle = battleService.getBattleById(battleId).get();
+        return new ResponseEntity<>(battleService.combatOutcome(player,battle), HttpStatus.OK);
     }
 
 

@@ -28,18 +28,7 @@ public class GameService {
 //    public List<Game> getGames(){
 //        return gameRepository.findAll();}
 
-    public List<Battle> countVictoriousBattles() {
-        return battleRepository.countByIsVictoriousTrue();
-    }
 
-    public Reply checkWinCondition(){
-            if (countVictoriousBattles().equals(3)){
-                return new Reply ("Congratulations, your Journey is Complete");
-            } else{
-                return new Reply("Your adventure continues");
-            }
-
-    }
     }
 
 

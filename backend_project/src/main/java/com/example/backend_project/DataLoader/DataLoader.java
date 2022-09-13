@@ -28,9 +28,10 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        Player player1 = new Player("Bob",1 );
+        Player player1 = new Player("Bob",5 );
+        Player player2 = new Player("john",0);
 
-        Monster monster1 = new Monster("Dracula",1);
+        Monster monster1 = new Monster("Dracula",4);
         Monster monster2 = new Monster("Wolf", 2);
         Monster monster3 = new Monster("Demon", 3);
 
@@ -38,11 +39,11 @@ public class DataLoader implements ApplicationRunner {
         Battle battle2 = new Battle("Cave");
         Battle battle3 = new Battle("Mountain");
 
-        battle1.setVictorious(true);
-        battle2.setVictorious(true);
-        battle3.setVictorious(true);
+//        battle1.setVictorious(true);
+//        battle2.setVictorious(true);
+//        battle3.setVictorious(true);
 
-        playerRepository.save(player1);
+        playerRepository.saveAll(Arrays.asList(player1,player2));
         monsterRepository.saveAll(Arrays.asList(monster1, monster2,monster3));
         battleRepository.saveAll(Arrays.asList(battle1, battle2, battle3));
 
