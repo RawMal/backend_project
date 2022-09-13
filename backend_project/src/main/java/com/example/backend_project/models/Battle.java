@@ -20,7 +20,7 @@ public class Battle {
     @Column(name = "location")
     private String location;
 
-    @Column(name = "is_victorious")
+    @Column(name = "victorious")
     private boolean isVictorious;
 
 
