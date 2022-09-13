@@ -4,8 +4,12 @@ public class Reply {
 
     private String message;
 
-    public Reply (String message){
+    private boolean victorious;
+
+    public Reply (String message, boolean victorious){
+
         this.message = message;
+        this.victorious = victorious;
     }
 
     public Reply(){
@@ -18,5 +22,13 @@ public class Reply {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public boolean isVictorious() {
+        return victorious;
+    }
+
+    public void setVictorious(boolean victorious) {
+        this.victorious = victorious;
     }
 }
