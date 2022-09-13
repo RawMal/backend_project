@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class BattleService {
@@ -33,6 +35,22 @@ public class BattleService {
 ////"""
 //            String.format("you are in a %s and encounter a %s",battle.getlocation(),battle.getmonster())
 //    )
+
+    public Reply Attack(Player player, Battle battle){
+        String monsterType = battle.getMonster().getType();
+        int damageDone = ThreadLocalRandom.current().nextInt(player.getWeapon().getMinDamage(),player.getWeapon().getMaxDamage());
+        battle.getMonster().setHitPoints(battle.getMonster().getHitPoints()-damageDone);
+        battleRepository.save(battle);
+        return new Reply(String.format("You did %s damage to the %s." +
+                "the %s has %sHP remaining",damageDone,monsterType,monsterType,battle.getMonster().getHitPoints()));
+    }
+
+    public Reply test(Player player, Battle battle){
+        int minDamage = player.getWeapon().getMinDamage();
+        int maxDamage = player.getWeapon().getMaxDamage();
+        return new Reply(String.format("%s min and %s max",minDamage,maxDamage));
+    }
+
 
     public Reply combatOutcome(Player player, Battle battle) {
         if (player.getLevel() > battle.getMonster().getLevel()) {

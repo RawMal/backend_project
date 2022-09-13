@@ -4,6 +4,7 @@ package com.example.backend_project.DataLoader;
 import com.example.backend_project.models.Battle;
 import com.example.backend_project.models.Monster;
 import com.example.backend_project.models.Player;
+import com.example.backend_project.models.Weapon;
 import com.example.backend_project.repositories.BattleRepository;
 import com.example.backend_project.repositories.MonsterRepository;
 import com.example.backend_project.repositories.PlayerRepository;
@@ -38,6 +39,8 @@ public class DataLoader implements ApplicationRunner {
         Battle battle1 = new Battle("Forest");
         Battle battle2 = new Battle("Cave");
         Battle battle3 = new Battle("Mountain");
+
+        Weapon weapon1 = new Weapon("sword",1,12,17,0.4f,player1);
 
 //        battle1.setVictorious(true);
 //        battle2.setVictorious(true);

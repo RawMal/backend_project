@@ -22,6 +22,9 @@ public class Monster {
     @Column(name = "is_alive")
     private boolean isAlive;
 
+    @Column(name = "hit_points")
+    private int hitPoints;
+
     @OneToMany(mappedBy = "monster")
     @JsonIgnoreProperties({"monster"})
     private List<Battle> battles;
@@ -31,6 +34,7 @@ public class Monster {
         this.level = level;
         this.isAlive = true;
         this.battles = new ArrayList<>();
+        this.hitPoints = 100;
     }
 
     public Monster(){
@@ -75,5 +79,13 @@ public class Monster {
 
     public void setBattles(List<Battle> battles) {
         this.battles = battles;
+    }
+
+    public int getHitPoints() {
+        return hitPoints;
+    }
+
+    public void setHitPoints(int hitPoints) {
+        this.hitPoints = hitPoints;
     }
 }
