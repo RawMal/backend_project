@@ -24,14 +24,18 @@ public class Weapon {
     @JsonIgnoreProperties({"weapon"})
     private Player player;
 
+    @Column(name ="price")
+    private int price;
 
-    public Weapon(String name, int level, int maxDamage, int minDamage, float blockChance, Player player) {
+
+    public Weapon(String name, int level, int maxDamage, int minDamage, float blockChance, Player player, int price) {
         this.name = name;
         this.level = level;
         this.maxDamage = maxDamage;
         this.minDamage = minDamage;
         this.blockChance = blockChance;
         this.player = player;
+        this.price = price;
     }
 
     public Weapon() {
@@ -91,5 +95,13 @@ public class Weapon {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

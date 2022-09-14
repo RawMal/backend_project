@@ -15,13 +15,13 @@ public class Shop {
     private String shopName;
 
     private List<Weapon> weapons;
-    private List<Integer> priceList;
+
 
 
     public Shop(String shopName){
         this.shopName = shopName;
         this.weapons = new ArrayList<>();
-        this.priceList = new ArrayList<>();
+
     }
 
     public Shop() {
@@ -51,11 +51,4 @@ public class Shop {
         this.weapons = weapons;
     }
 
-    public List<Integer> getPriceList() {
-        return priceList;
-    }
-
-    public void setPriceList(List<Integer> priceList) {
-        this.priceList = priceList;
-    }
 }
