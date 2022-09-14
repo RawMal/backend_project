@@ -11,10 +11,7 @@ import com.example.backend_project.services.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -49,7 +46,11 @@ public class GameController {
         return new ResponseEntity<>(battleService.combatOutcome(player,battle), HttpStatus.OK);
     }
 
-    @
+    @PostMapping
+    public ResponseEntity<Reply> startNewGame (@RequestParam long playerId){
+        Reply reply = gameService.startNewGame(playerId);
+        return new ResponseEntity<>(reply, HttpStatus.CREATED);
+    }
 
 
 }
