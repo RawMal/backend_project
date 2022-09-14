@@ -30,10 +30,10 @@ public class Battle {
     private Game game;
 
 
-    public Battle(String location, Game game) {
+    public Battle(String location, Game game, Monster monster) {
         // TODO fix this get Random Monster method
 //        this.monster = monsterService.getRandomMonster();
-        this.monster = new Monster("wolf",1);
+        this.monster = new Monster("wolf",1,20,15);
         this.location = location;
         this.isVictorious = false;
         this.game = game;

@@ -36,14 +36,34 @@ public class BattleService {
     }
 
     public Reply processFight(Player player, Battle battle){
-        combatOutcome(player,battle);
+        if (hasPlayerWon(player,battle) && checkWinCondition()){
+            return new Reply("You've defeated all of the monster and won the game! Congratulations, your Journey is Complete");
+        }else if(hasPlayerWon(player,battle) && !checkWinCondition()){
+            player.setHitPoints(100);
+            playerRepository.save(player);
+            return  new Reply("Your Defeated the monster! Your adventure continues...");
+        } else if(hasMonsterWon(player,battle)){
+            return new Reply("You have been defeated");
+        } else if(!hasMonsterWon(player,battle) && !hasPlayerWon(player,battle)){
 
-        playerAttack(player,battle);
-        combatOutcome(player,battle);
-        monsterAttack(player,battle);
-        combatOutcome(player,battle);
-        return new Reply();
-    }
+            String monsterName = battle.getMonster().getType();
+            int playerDamage = playerAttack(player,battle);
+            if (hasPlayerWon(player,battle)){
+                return new Reply(String.format("You did %s damage and dealt a killing blow to the %s",playerDamage,monsterName));
+            }
+            int monsterDamage = monsterAttack(player,battle);
+            if (hasMonsterWon(player,battle)){
+                return new Reply(String.format("The %s did %s damage and defeated you!",monsterName,monsterDamage));
+            }
+            return new Reply(String.format("You did %s damage." +
+                        "the %s has %sHP remaining.  The %s attacked you for %s damage, you have %sHP remaining"
+                    ,playerDamage,monsterName,battle.getMonster().getHitPoints(),monsterName,monsterDamage,player.getHitPoints()));
+            }
+            return new Reply("error");
+        }
+
+
+
 
 //    if player defeats monster & player wins game - return reply
 //    if player defeats monstser & not wins game - return reply
@@ -56,53 +76,43 @@ public class BattleService {
 //    return reply of both attacks
 
 
-
-
-
-    public Reply playerAttack(Player player, Battle battle){
-
-
-            String monsterType = battle.getMonster().getType();
+    public int playerAttack(Player player, Battle battle){
             int damageDone = ThreadLocalRandom.current().nextInt(player.getWeapon().getMinDamage(),player.getWeapon().getMaxDamage());
             battle.getMonster().setHitPoints(battle.getMonster().getHitPoints()-damageDone);
             battleRepository.save(battle);
-
-            return new Reply(String.format("You did %s damage to the %s." +
-                    "the %s has %sHP remaining",damageDone,monsterType,monsterType,battle.getMonster().getHitPoints()));
-
+            return damageDone;
         }
 
-
-
-    public Reply monsterAttack(Player player, Battle battle){
+    public int monsterAttack(Player player, Battle battle){
 
         int damageDone = ThreadLocalRandom.current().nextInt(battle.getMonster().getMinDamage(),battle.getMonster().getMaxDamage());
         player.setHitPoints(player.getHitPoints()-damageDone);
         playerRepository.save(player);
-        return new Reply(String.format("The monster attacked you for %s damage." +
-                "You have %sHP remaining",damageDone,player.getHitPoints()));
-
-
+        return damageDone;
     }
 
 
-    public Reply combatOutcome(Player player, Battle battle) {
+    public boolean hasPlayerWon(Player player, Battle battle) {
         if (player.getHitPoints() > 0 && battle.getMonster().getHitPoints() <= 0) {
             battle.setVictorious(true);
             player.setNumberOfWins(player.getNumberOfWins()+1);
             battle.getMonster().setAlive(false);
             battleRepository.save(battle);
-            if (checkWinCondition()) {
-                return new Reply ("You've defeated the monster and won the game! Congratulations, your Journey is Complete");
-            } else {
-                return new Reply("Your adventure continues");
-            }
+            return true;
 
         } else {
-            return new Reply ("Oh no, you've been defeated!");
+            return false;
 
         }
 
+    }
+
+    public boolean hasMonsterWon(Player player, Battle battle){
+        if (battle.getMonster().getHitPoints() > 0 && player.getHitPoints() <=0){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Reply test(Player player, Battle battle){

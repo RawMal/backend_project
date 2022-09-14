@@ -41,17 +41,14 @@ public class DataLoader implements ApplicationRunner {
 
         Monster monster1 = new Monster("Dracula",4,10,5);
         Monster monster2 = new Monster("Wolf", 2,15,5);
-        Monster monster3 = new Monster("Demon", 3,20,16);
+        Monster monster3 = new Monster("Demon", 3,45,20);
 
-        Battle battle1 = new Battle("Forest", game1);
-        Battle battle2 = new Battle("Cave", game1);
-        Battle battle3 = new Battle("Mountain", game1);
+        Battle battle1 = new Battle("Forest", game1,monster1);
+        Battle battle2 = new Battle("Cave", game1,monster2);
+        Battle battle3 = new Battle("Mountain", game1,monster3);
 
-        Weapon weapon1 = new Weapon("sword",1,12,17,0.4f,player1);
+        Weapon weapon1 = new Weapon("sword",1,35,25,0.4f,player1);
 
-//        battle1.setVictorious(true);
-//        battle2.setVictorious(true);
-//        battle3.setVictorious(true);
 
         playerRepository.saveAll(Arrays.asList(player1,player2));
         monsterRepository.saveAll(Arrays.asList(monster1, monster2,monster3));
