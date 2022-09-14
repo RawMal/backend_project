@@ -17,9 +17,11 @@ public class PlayerService {
     PlayerRepository playerRepository;
 
 
-    public List<Player> getAllPlayers(){ return playerRepository.findAll();}
+    public List<Player> getAllPlayers(){
+        return playerRepository.findAll();}
 
-    public Optional<Player> getPlayerById(Long id){return playerRepository.findById(id);}
+    public Optional<Player> getPlayerById(Long id){
+        return playerRepository.findById(id);}
 
     public Player savePlayer(Player player){
         playerRepository.save(player);
@@ -30,6 +32,7 @@ public class PlayerService {
         Player player = playerRepository.findById(id).get();
         if(weapon.getPrice()<= player.getGold()){
             player.setWeapon(weapon);
+            playerRepository.save(player);
 
 //            player.setGold(player.getGold()) -= weapon.getPrice();
             return new Reply("You have obtained a new weapon!");
