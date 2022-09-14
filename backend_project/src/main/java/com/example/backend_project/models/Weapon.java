@@ -31,7 +31,7 @@ public class Weapon {
         this.maxDamage = maxDamage;
         this.minDamage = minDamage;
         this.blockChance = blockChance;
-        this.player=player;
+        this.player = player;
     }
 
     public Weapon() {
