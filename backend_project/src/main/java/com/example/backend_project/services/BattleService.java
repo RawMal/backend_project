@@ -38,6 +38,7 @@ public class BattleService {
         if (player.getLevel() > battle.getMonster().getLevel()) {
             battle.setVictorious(true);
             player.setNumberOfWins(player.getNumberOfWins()+1);
+            battle.getMonster().setAlive(false);
             battleRepository.save(battle);
             if (checkWinCondition()) {
                 return new Reply ("You've defeated the monster and won the game! Congratulations, your Journey is Complete");

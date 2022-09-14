@@ -24,7 +24,7 @@ public class Battle {
     @Column(name = "is_victorious")
     private boolean isVictorious;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "game_id")
     @JsonIgnoreProperties({"battles"})
     private Game game;
