@@ -53,5 +53,9 @@ public class BattleService {
 
     }
 
+    public Reply newEncounter(Battle battle) {
+        return new Reply(String.format("you are passing through the %s and encountered a %s. Prepare for battle!", battle.getLocation(), battle.getMonster()));
+    }
+
 
 }
