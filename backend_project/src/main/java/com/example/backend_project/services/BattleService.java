@@ -44,6 +44,8 @@ public class BattleService {
             return  new Reply("Your Defeated the monster! Your adventure continues...");
         } else if(hasMonsterWon(player,battle)){
             return new Reply("You have been defeated");
+
+
         } else if(!hasMonsterWon(player,battle) && !hasPlayerWon(player,battle)){
 
             String monsterName = battle.getMonster().getType();
