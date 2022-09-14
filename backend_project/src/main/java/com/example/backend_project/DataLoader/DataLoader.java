@@ -39,9 +39,9 @@ public class DataLoader implements ApplicationRunner {
 
         Game game1 = new Game(player1);
 
-        Monster monster1 = new Monster("Dracula",4);
-        Monster monster2 = new Monster("Wolf", 2);
-        Monster monster3 = new Monster("Demon", 3);
+        Monster monster1 = new Monster("Dracula",4,10,5);
+        Monster monster2 = new Monster("Wolf", 2,15,5);
+        Monster monster3 = new Monster("Demon", 3,20,16);
 
         Battle battle1 = new Battle("Forest", game1);
         Battle battle2 = new Battle("Cave", game1);
