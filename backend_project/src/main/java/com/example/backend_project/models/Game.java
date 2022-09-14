@@ -17,6 +17,9 @@ public class Game {
     @JoinColumn(name = "player_id")
     @JsonIgnoreProperties({"games"})
     private Player player;
+
+    @OneToMany(mappedBy = "game")
+    @JsonIgnoreProperties({"game"})
     private List<Battle> battles;
 
     public Game(Player player){
