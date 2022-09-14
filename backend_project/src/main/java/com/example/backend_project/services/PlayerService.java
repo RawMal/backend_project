@@ -1,6 +1,8 @@
 package com.example.backend_project.services;
 
 import com.example.backend_project.models.Player;
+import com.example.backend_project.models.Reply;
+import com.example.backend_project.models.Weapon;
 import com.example.backend_project.repositories.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,7 @@ public class PlayerService {
     @Autowired
     PlayerRepository playerRepository;
 
+
     public List<Player> getAllPlayers(){ return playerRepository.findAll();}
 
     public Optional<Player> getPlayerById(Long id){return playerRepository.findById(id);}
@@ -22,6 +25,24 @@ public class PlayerService {
         playerRepository.save(player);
         return player;
     }
+
+    public Reply buyWeapon (Weapon weapon, Long id){
+        Player player = playerRepository.findById(id).get();
+        if(weapon.getPrice()<= player.getGold()){
+            player.setWeapon(weapon);
+
+//            player.setGold(player.getGold()) -= weapon.getPrice();
+            return new Reply("You have obtained a new weapon!");
+        } else {
+            return new Reply("You can not afford this weapon");
+        }
+
+    }
+    
+
+
+
+
 
 
 }

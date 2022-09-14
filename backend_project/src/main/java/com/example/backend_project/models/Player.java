@@ -23,18 +23,22 @@ public class Player {
     @Column(name = "hit_points")
     private int hitPoints;
 
+    @Column(name ="gold")
+    private int gold;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "weapon_id",referencedColumnName = "id")
     @JsonIgnoreProperties({"player"})
     private Weapon weapon;
 
 
-    public Player (String name, int level){
+    public Player (String name, int level, int gold){
         this.name = name;
         this.level = level;
         this.numberOfWins = 0;
         this.hitPoints = 100;
         this.weapon = new Weapon("sword",1,15,12,0.4f,null);
+        this.gold = gold;
     }
 
     public Player(){
@@ -87,5 +91,13 @@ public class Player {
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
     }
 }
