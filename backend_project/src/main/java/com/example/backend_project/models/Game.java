@@ -1,11 +1,21 @@
 package com.example.backend_project.models;
 
-import javax.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(name = "games")
 public class Game {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @OneToOne
+    @JoinColumn(name = "player_id")
+    @JsonIgnoreProperties({"games"})
     private Player player;
     private List<Battle> battles;
 
