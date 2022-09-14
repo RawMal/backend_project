@@ -24,7 +24,7 @@ public class Battle {
     @Column(name = "is_victorious")
     private boolean isVictorious;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "game_id")
     @JsonIgnoreProperties({"battles"})
     private Game game;
@@ -33,7 +33,7 @@ public class Battle {
     public Battle(String location, Game game, Monster monster) {
         // TODO fix this get Random Monster method
 //        this.monster = monsterService.getRandomMonster();
-        this.monster = new Monster("wolf",1,20,15);
+        this.monster = monster;
         this.location = location;
         this.isVictorious = false;
         this.game = game;
