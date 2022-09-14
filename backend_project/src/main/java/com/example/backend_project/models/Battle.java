@@ -24,13 +24,19 @@ public class Battle {
     @Column(name = "is_victorious")
     private boolean isVictorious;
 
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "game_id")
+    @JsonIgnoreProperties({"battles"})
+    private Game game;
 
-    public Battle(String location) {
+
+    public Battle(String location, Game game) {
         // TODO fix this get Random Monster method
 //        this.monster = monsterService.getRandomMonster();
         this.monster = new Monster("wolf",1);
         this.location = location;
         this.isVictorious = false;
+        this.game = game;
     }
 
     public Battle(){
@@ -67,5 +73,13 @@ public class Battle {
 
     public void setVictorious(boolean victorious) {
         isVictorious = victorious;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 }
