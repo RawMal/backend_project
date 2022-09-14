@@ -32,9 +32,8 @@ public class PlayerService {
         Player player = playerRepository.findById(id).get();
         if(weapon.getPrice()<= player.getGold()){
             player.setWeapon(weapon);
+            player.setGold(player.getGold()- weapon.getPrice());
             playerRepository.save(player);
-
-//            player.setGold(player.getGold()) -= weapon.getPrice();
             return new Reply("You have obtained a new weapon!");
         } else {
             return new Reply("You can not afford this weapon");
