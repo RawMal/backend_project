@@ -37,7 +37,7 @@ public class Player {
         this.level = level;
         this.numberOfWins = 0;
         this.hitPoints = 100;
-        this.weapon = new Weapon("sword",1,15,12,0.4f,null);
+//        this.weapon = new Weapon("sword",1,15,12,0.4f,null);
         this.gold = gold;
     }
 

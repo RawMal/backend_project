@@ -10,7 +10,7 @@ public class Weapon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
-    private String name;
+    private String weaponName;
     @Column
     private int level;
     @Column
@@ -27,26 +27,32 @@ public class Weapon {
     @Column(name ="price")
     private int price;
 
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "shop_id")
+    @JsonIgnoreProperties({"weapons"})
+    private Shop shop;
 
-    public Weapon(String name, int level, int maxDamage, int minDamage, float blockChance, Player player, int price) {
-        this.name = name;
+
+    public Weapon(String weaponName, int level, int maxDamage, int minDamage, float blockChance, Player player, int price, Shop shop) {
+        this.weaponName = weaponName;
         this.level = level;
         this.maxDamage = maxDamage;
         this.minDamage = minDamage;
         this.blockChance = blockChance;
         this.player = player;
         this.price = price;
+        this.shop = shop;
     }
 
     public Weapon() {
     }
 
     public String getName() {
-        return name;
+        return weaponName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.weaponName = weaponName;
     }
 
     public int getLevel() {
@@ -103,5 +109,13 @@ public class Weapon {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
     }
 }

@@ -1,5 +1,7 @@
 package com.example.backend_project.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +16,9 @@ public class Shop {
     @Column(name ="shopName")
     private String shopName;
 
+    @OneToMany(mappedBy = "shop")
+    @JsonIgnoreProperties({"shop"})
     private List<Weapon> weapons;
-
 
 
     public Shop(String shopName){
