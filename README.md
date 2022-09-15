@@ -58,7 +58,7 @@ Using postman we can ensure that our game runs as we initially planned. We can u
 
 ![alt text](backend_UML.jpg)
 
-![alt text](backend_ERD.png)
+![alt text](backend_ERD.jpg)
 
 
 
