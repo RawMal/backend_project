@@ -68,6 +68,11 @@ Using postman we can ensure that our game runs as we initially planned. We can u
 
 # Project structure
 
+![alt text](backend_UML.jpg)
+
+![alt text](backend_ERD.jpg)
+
+
 
 # Further extensions / considerations
 
