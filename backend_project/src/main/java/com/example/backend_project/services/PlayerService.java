@@ -38,9 +38,9 @@ public class PlayerService {
             player.setWeapon(weapon);
             player.setGold(player.getGold()- weapon.getPrice());
             playerRepository.save(player);
-            return new Reply("You have obtained a new weapon!");
+            return new Reply(String.format("You have obtained the %s for %s gold",weapon.getName(),weapon.getPrice()));
         } else {
-            return new Reply("You can not afford this weapon");
+            return new Reply(String.format("You cannot afford the %s. It costs %s gold",weapon.getName(),weapon.getPrice()));
         }
 
     }

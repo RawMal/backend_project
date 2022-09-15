@@ -31,7 +31,7 @@ public class GameService {
         Player player = playerService.getPlayerById(playerId).get();
         Game game = new Game(player);
         gameRepository.save(game);
-        return new Reply("A new adventure has been started!");
+        return new Reply(String.format("Welcome %s! A new adventure has started!",game.getPlayer().getName()));
     }
 
     public Optional<Game> getGameById(Long id){
