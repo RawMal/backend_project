@@ -34,8 +34,8 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
 
-        Player player1 = new Player("Bob",5,5 );
-        Player player2 = new Player("john",0,0);
+        Player player1 = new Player("Bob",5);
+        Player player2 = new Player("john",0);
 
         Game game1 = new Game(player1);
 
@@ -55,7 +55,7 @@ public class DataLoader implements ApplicationRunner {
                 "Great axe", 2, 50, 40, 5, player1, 7, shop1);
         Weapon weapon3 = new Weapon(
                 "Spear", 2, 35, 8, 5, player1, 5, shop1);
-        Weapon weapon3 = new Weapon(
+        Weapon weapon4 = new Weapon(
                 "Spear", 2, 35, 8, 5, player1, 5, shop1);
 
 
@@ -65,7 +65,7 @@ public class DataLoader implements ApplicationRunner {
 
         gameRepository.saveAll(Arrays.asList(game1));
         shopRepository.saveAll(Arrays.asList(shop1));
-        weaponRepository.saveAll(Arrays.asList(weapon1, weapon2, weapon3));
+        weaponRepository.saveAll(Arrays.asList(weapon1, weapon2, weapon3, weapon4));
 
 
     }
