@@ -20,7 +20,9 @@ public class BattleService {
     PlayerRepository playerRepository;
 
 
-    public Optional<Battle> getBattleById(Long id){return battleRepository.findById(id);}
+    public Optional<Battle> getBattleById(Long id){
+        return battleRepository.findById(id);
+    }
 
     public int countVictoriousBattles() {
         return battleRepository.countByIsVictoriousTrue();
