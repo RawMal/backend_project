@@ -117,11 +117,6 @@ public class BattleService {
         }
     }
 
-    public Reply test(Player player, Battle battle) {
-        int minDamage = player.getWeapon().getMinDamage();
-        int maxDamage = player.getWeapon().getMaxDamage();
-        return new Reply(String.format("%s min and %s max", minDamage, maxDamage));
-    }
 
     public Reply newEncounter(Battle battle) {
         return new Reply(String.format("you are passing through the %s and encountered a %s. Prepare for battle!", battle.getLocation(), battle.getMonster().getType()));
