@@ -17,10 +17,6 @@ public class PlayerService {
     @Autowired
     PlayerRepository playerRepository;
 
-    @Autowired
-    ShopRepository shopRepository;
-
-
     public List<Player> getAllPlayers(){
         return playerRepository.findAll();}
 
