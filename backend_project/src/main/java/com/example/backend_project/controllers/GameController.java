@@ -38,22 +38,16 @@ public class GameController {
         games = gameService.getGames();
         return new ResponseEntity<>(games, HttpStatus.OK);
     }
+    
 
-
-
-    @PatchMapping(value = "/{battleId}")
-    public ResponseEntity<Reply> processFight(@PathVariable long battleId, @RequestParam long playerId){
-        Player player = playerService.getPlayerById(playerId).get();
+    @PatchMapping(value = "/{gameId}")
+    public ResponseEntity<Reply> processFight(@PathVariable long gameId,@RequestParam long battleId){
+        Game game = gameService.getGameById(gameId).get();
+        Player player = game.getPlayer();
         Battle battle = battleService.getBattleById(battleId).get();
         return new ResponseEntity<>(battleService.processFight(player,battle),HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{battleId}")
-    public ResponseEntity<Reply> test(@PathVariable long battleId, @RequestParam long playerId){
-        Player player = playerService.getPlayerById(playerId).get();
-        Battle battle = battleService.getBattleById(battleId).get();
-        return new ResponseEntity<>(battleService.test(player,battle),HttpStatus.OK);
-    }
     @PostMapping
     public ResponseEntity<Reply> startNewGame (@RequestParam long playerId){
         Reply reply = gameService.startNewGame(playerId);
