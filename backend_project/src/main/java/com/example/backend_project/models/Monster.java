@@ -24,17 +24,23 @@ public class Monster {
 
     @Column(name = "hit_points")
     private int hitPoints;
+    @Column
+    private int maxDamage;
+    @Column
+    private int minDamage;
 
     @OneToMany(mappedBy = "monster")
     @JsonIgnoreProperties({"monster"})
     private List<Battle> battles;
 
-    public Monster(String type, int level) {
+    public Monster(String type, int level,int maxDamage,int minDamage) {
         this.type = type;
         this.level = level;
         this.isAlive = true;
         this.battles = new ArrayList<>();
         this.hitPoints = 100;
+        this.maxDamage = maxDamage;
+        this.minDamage = minDamage;
     }
 
     public Monster(){
@@ -87,5 +93,21 @@ public class Monster {
 
     public void setHitPoints(int hitPoints) {
         this.hitPoints = hitPoints;
+    }
+
+    public int getMaxDamage() {
+        return maxDamage;
+    }
+
+    public void setMaxDamage(int maxDamage) {
+        this.maxDamage = maxDamage;
+    }
+
+    public int getMinDamage() {
+        return minDamage;
+    }
+
+    public void setMinDamage(int minDamage) {
+        this.minDamage = minDamage;
     }
 }
