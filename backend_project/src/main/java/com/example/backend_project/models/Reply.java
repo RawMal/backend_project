@@ -11,7 +11,6 @@ public class Reply {
     }
 
     public Reply(){
-        
     }
 
     public String getMessage() {

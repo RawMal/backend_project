@@ -17,16 +17,7 @@ import java.util.Optional;
 public class GameService {
 
     @Autowired
-    BattleService battleService;
-
-    @Autowired
     PlayerService playerService;
-
-    @Autowired
-    MonsterRepository monsterRepository;
-
-    @Autowired
-    BattleRepository battleRepository;
 
     @Autowired
     GameRepository gameRepository;

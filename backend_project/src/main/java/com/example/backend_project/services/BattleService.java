@@ -13,10 +13,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class BattleService {
-
-    @Autowired
-    PlayerService playerService;
-
     @Autowired
     BattleRepository battleRepository;
 
@@ -64,20 +60,6 @@ public class BattleService {
             return new Reply("error");
         }
 
-
-
-
-//    if player defeats monster & player wins game - return reply
-//    if player defeats monstser & not wins game - return reply
-//    if player lost to monster - return reply
-//    if player and monster both alive - continue logic
-//    player attacks
-//    repeat checks - return attack message followed by victory/adventure continues
-//    monster attacks
-//    repeat checks - return attack message followed by loss message
-//    return reply of both attacks
-
-
     public int playerAttack(Player player, Battle battle){
             int damageDone = ThreadLocalRandom.current().nextInt(player.getWeapon().getMinDamage(),player.getWeapon().getMaxDamage());
             battle.getMonster().setHitPoints(battle.getMonster().getHitPoints()-damageDone);
@@ -116,7 +98,6 @@ public class BattleService {
             return false;
         }
     }
-
 
     public Reply newEncounter(Battle battle) {
         return new Reply(String.format("you are passing through the %s and encountered a %s. Prepare for battle!", battle.getLocation(), battle.getMonster().getType()));

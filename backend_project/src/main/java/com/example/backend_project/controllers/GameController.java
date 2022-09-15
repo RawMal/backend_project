@@ -25,13 +25,7 @@ public class GameController {
 
     @Autowired
     BattleService battleService;
-
-    @Autowired
-    MonsterService monsterService;
-
-    @Autowired
-    PlayerService playerService;
-
+    
     @GetMapping
     public ResponseEntity<List<Game>> getAllGames(){
         List<Game> games;
