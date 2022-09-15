@@ -1,5 +1,8 @@
 package com.example.backend_project.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.*;
 
 @Entity(name = "players")
@@ -17,11 +20,25 @@ public class Player {
     @Column (name = "number_of_wins")
     private int numberOfWins;
 
+    @Column(name = "hit_points")
+    private int hitPoints;
 
-    public Player (String name, int level){
+    @Column(name ="gold")
+    private int gold;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "weapon_id",referencedColumnName = "id")
+    @JsonIgnoreProperties({"player"})
+    private Weapon weapon;
+
+
+    public Player (String name, int level, int gold){
         this.name = name;
         this.level = level;
         this.numberOfWins = 0;
+        this.hitPoints = 100;
+//        this.weapon = new Weapon("sword",1,15,12,0.4f,null);
+        this.gold = gold;
     }
 
     public Player(){
@@ -58,5 +75,29 @@ public class Player {
 
     public void setNumberOfWins(int numberOfWins) {
         this.numberOfWins = numberOfWins;
+    }
+
+    public int getHitPoints() {
+        return hitPoints;
+    }
+
+    public void setHitPoints(int hitPoints) {
+        this.hitPoints = hitPoints;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
     }
 }

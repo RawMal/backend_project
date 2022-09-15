@@ -13,7 +13,7 @@ public class Battle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "monster_id")
     @JsonIgnoreProperties({"battles"})
     private Monster monster;
@@ -30,10 +30,10 @@ public class Battle {
     private Game game;
 
 
-    public Battle(String location, Game game) {
+    public Battle(String location, Game game, Monster monster) {
         // TODO fix this get Random Monster method
 //        this.monster = monsterService.getRandomMonster();
-        this.monster = new Monster("wolf",1);
+        this.monster = monster;
         this.location = location;
         this.isVictorious = false;
         this.game = game;
