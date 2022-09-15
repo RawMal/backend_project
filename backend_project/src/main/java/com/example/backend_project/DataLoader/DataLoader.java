@@ -56,6 +56,7 @@ public class DataLoader implements ApplicationRunner {
         Shop shop1 = new Shop("Ye Old Shop");
 
         Weapon weapon1 = new Weapon("Sword", 2, 25, 15, 5, player1, 5, shop1);
+        Weapon weapon2 = new Weapon("Great axe", 2, 50, 40, 5, player1, 5, shop1);
 
         playerRepository.saveAll(Arrays.asList(player1,player2));
         monsterRepository.saveAll(Arrays.asList(monster1, monster2,monster3));
@@ -63,7 +64,7 @@ public class DataLoader implements ApplicationRunner {
 
         gameRepository.saveAll(Arrays.asList(game1));
         shopRepository.saveAll(Arrays.asList(shop1));
-        weaponRepository.saveAll(Arrays.asList(weapon1));
+        weaponRepository.saveAll(Arrays.asList(weapon1, weapon2));
 
 
 

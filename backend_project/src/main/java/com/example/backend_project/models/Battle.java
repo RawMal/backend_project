@@ -13,7 +13,7 @@ public class Battle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "monster_id")
     @JsonIgnoreProperties({"battles"})
     private Monster monster;
@@ -24,7 +24,7 @@ public class Battle {
     @Column(name = "is_victorious")
     private boolean isVictorious;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "game_id")
     @JsonIgnoreProperties({"battles"})
     private Game game;
