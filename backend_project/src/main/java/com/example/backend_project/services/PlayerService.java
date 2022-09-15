@@ -4,6 +4,7 @@ import com.example.backend_project.models.Player;
 import com.example.backend_project.models.Reply;
 import com.example.backend_project.models.Weapon;
 import com.example.backend_project.repositories.PlayerRepository;
+import com.example.backend_project.repositories.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,9 @@ public class PlayerService {
 
     @Autowired
     PlayerRepository playerRepository;
+
+    @Autowired
+    ShopRepository shopRepository;
 
 
     public List<Player> getAllPlayers(){

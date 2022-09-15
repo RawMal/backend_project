@@ -6,15 +6,12 @@ import com.example.backend_project.models.Player;
 import com.example.backend_project.models.Reply;
 import com.example.backend_project.services.BattleService;
 import com.example.backend_project.services.GameService;
-import com.example.backend_project.services.MonsterService;
-import com.example.backend_project.services.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/games")

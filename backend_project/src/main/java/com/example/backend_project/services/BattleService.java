@@ -36,8 +36,10 @@ public class BattleService {
             return new Reply("You've defeated all of the monster and won the game! Congratulations, your Journey is Complete");
         }else if(hasPlayerWon(player,battle) && !checkWinCondition()){
             player.setHitPoints(100);
+            int goldAdded = ThreadLocalRandom.current().nextInt(4,8);
+            player.setGold(player.getGold()+goldAdded);
             playerRepository.save(player);
-            return  new Reply("Your Defeated the monster! Your adventure continues...");
+            return  new Reply(String.format("You defeated the monster and gained %s gold! Your adventure continues...",goldAdded));
         } else if(hasMonsterWon(player,battle)){
             return new Reply("You have been defeated");
 
@@ -57,7 +59,7 @@ public class BattleService {
                         "the %s has %sHP remaining.  The %s attacked you for %s damage, you have %sHP remaining"
                     ,playerDamage,monsterName,battle.getMonster().getHitPoints(),monsterName,monsterDamage,player.getHitPoints()));
             }
-            return new Reply("error");
+            return new Reply(null);
         }
 
     public int playerAttack(Player player, Battle battle){

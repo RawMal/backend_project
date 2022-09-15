@@ -1,8 +1,6 @@
 package com.example.backend_project.models;
 
-import com.example.backend_project.services.MonsterService;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 
