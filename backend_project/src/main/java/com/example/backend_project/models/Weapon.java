@@ -12,8 +12,6 @@ public class Weapon {
     @Column
     private String weaponName;
     @Column
-    private int level;
-    @Column
     private int maxDamage;
     @Column
     private int minDamage;
@@ -33,9 +31,8 @@ public class Weapon {
     private Shop shop;
 
 
-    public Weapon(String weaponName, int level, int maxDamage, int minDamage, float blockChance, Player player, int price, Shop shop) {
+    public Weapon(String weaponName, int maxDamage, int minDamage, float blockChance, Player player, int price, Shop shop) {
         this.weaponName = weaponName;
-        this.level = level;
         this.maxDamage = maxDamage;
         this.minDamage = minDamage;
         this.blockChance = blockChance;
@@ -53,14 +50,6 @@ public class Weapon {
 
     public void setName(String name) {
         this.weaponName = weaponName;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public int getMaxDamage() {

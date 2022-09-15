@@ -14,9 +14,6 @@ public class Player {
     @Column (name = "name")
     private String name;
 
-    @Column(name = "level")
-    private int level;
-
     @Column (name = "number_of_wins")
     private int numberOfWins;
 
@@ -32,9 +29,8 @@ public class Player {
     private Weapon weapon;
 
 
-    public Player (String name, int level){
+    public Player (String name){
         this.name = name;
-        this.level = level;
         this.numberOfWins = 0;
         this.hitPoints = 100;
         this.gold = 2;
@@ -58,14 +54,6 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public int getNumberOfWins() {

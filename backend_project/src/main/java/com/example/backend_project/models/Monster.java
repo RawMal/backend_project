@@ -16,8 +16,6 @@ public class Monster {
     @Column(name = "type")
     private String type;
 
-    @Column(name = "level")
-    private int level;
 
     @Column(name = "is_alive")
     private boolean isAlive;
@@ -33,9 +31,8 @@ public class Monster {
     @JsonIgnoreProperties({"monster"})
     private List<Battle> battles;
 
-    public Monster(String type, int level,int maxDamage,int minDamage) {
+    public Monster(String type,int maxDamage,int minDamage) {
         this.type = type;
-        this.level = level;
         this.isAlive = true;
         this.battles = new ArrayList<>();
         this.hitPoints = 100;
@@ -61,14 +58,6 @@ public class Monster {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public boolean isAlive() {
