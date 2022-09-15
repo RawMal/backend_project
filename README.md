@@ -9,7 +9,7 @@ Set out on an action packed quest with the hero Frodo as he journeys through for
 
 # Project Overview
 
-Bright Network Technology Academy have tasked the team at Electronic Otters (EO Games) to produce an API which uses Spring boot and SQL within Java, so the team have embarked on a new project to deliver an exciting text-based adventure game with turn based combat. This is a text-based adventure game where the player fights turn-based battles against monsters.
+Bright Network Technology Academy have tasked the team at Electronic Otters (EO Games) to produce an API which uses Spring boot and SQL within Java, so the team have embarked on a new project to deliver an exciting text-based adventure game with turn based combat against monsters.
 
 # Table of Contents 
 
@@ -29,6 +29,18 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 4. Open up Postman to start the requests.
 
 # How to play
+
+1. First create a Post request for a new player. 
+
+   The request body should look like this:
+   
+   ```{"name":"frodo"}```
+2. Create a post request for a new game 
+3. send a GET request to the shop to see all weapons.
+4. send a patch request to the player to buy a weapon
+5. to start a battle send a GET request  
+6. To attack the monster send a PATCH request
+7. After defeating the monster, feel free to head back to the shop, or start a new battle.
 
 ## Request Paths:
 
