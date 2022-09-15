@@ -28,7 +28,6 @@ public class Game {
     }
 
     public Game(){
-
     }
 
     public Player getPlayer() {

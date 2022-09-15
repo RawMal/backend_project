@@ -32,13 +32,12 @@ public class Player {
     private Weapon weapon;
 
 
-    public Player (String name, int level, int gold){
+    public Player (String name, int level){
         this.name = name;
         this.level = level;
         this.numberOfWins = 0;
         this.hitPoints = 100;
-//        this.weapon = new Weapon("sword",1,15,12,0.4f,null);
-        this.gold = gold;
+        this.gold = 2;
     }
 
     public Player(){

@@ -31,8 +31,6 @@ public class Battle {
 
 
     public Battle(String location, Game game, Monster monster) {
-        // TODO fix this get Random Monster method
-//        this.monster = monsterService.getRandomMonster();
         this.monster = monster;
         this.location = location;
         this.isVictorious = false;

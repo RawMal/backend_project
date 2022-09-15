@@ -19,7 +19,6 @@ import java.util.Optional;
 @RequestMapping(value = "/players")
 public class PlayerController {
 
-
     @Autowired
     PlayerService playerService;
 
@@ -55,7 +54,5 @@ public class PlayerController {
         Weapon weapon = weaponService.getWeaponById(weaponId).get();
         return new ResponseEntity<>(playerService.buyWeapon(weapon, playerId), HttpStatus.OK);
     }
-
-
 
 }
