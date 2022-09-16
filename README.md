@@ -65,7 +65,7 @@ This table shows all possible requests aswell as an example of their path variab
 ## Postman:
 
 <p align="center">
-Postman 
+
 </p>
 
 ![alt text](postman.png)
