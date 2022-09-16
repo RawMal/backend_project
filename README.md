@@ -63,7 +63,7 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 Postman 
 </p>
 
-![alt text](Screen Shot 2022-09-15 at 15.17.46.png)
+![alt text](Untitled-2022-09-16-0928.png)
 
 
 Using postman we can ensure that our game runs as we initially planned. We can use http requests to get automated responses. It is also our way of testing each command and debugging where necessary.
