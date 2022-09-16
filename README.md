@@ -68,11 +68,15 @@ Using postman we can ensure that our game runs as we initially planned. We can u
 
 # Project structure
 
-![alt text](backend_UML.jpg)
 <p align="center">
-The UML Diagram for our Project
+###**The UML Diagram for our Project**###
 </p>
+![alt text](backend_UML.jpg)
 
+
+<p align="center">
+###**The ERD Diagram for our Project**###
+</p>
 ![alt text](backend_ERD.jpg)
 
 
@@ -81,5 +85,5 @@ The UML Diagram for our Project
 
 - Currently, only one game can be running at a time. This could be 
 
-- To make the game more interactive, our nexte extension would have been to provide the player the option to "block" aswell as "attack"
+- To make the game more interactive, our nexte extension would have been to provide the player the option to "block" as well as "attack"
 
