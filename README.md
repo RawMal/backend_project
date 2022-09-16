@@ -26,7 +26,7 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 1. First ensure that Java 17 is installed to run the game.
 2. Clone this repository by clicking the green 'code' sign on top of this page. Click the SSH key and type in your terminal the following: git clone "the SSH key".
 3. Open up and run the file in IntelliJ.
-4. Make sure you have SQL downloaded and a database created through Terminal with the command :createdb "name of database".
+4. Make sure you have SQL downloaded and a database created through Terminal with the command :createdb adventure_game.
 5. Open up Postman to start the requests.
 
 # How to play
