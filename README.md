@@ -26,7 +26,8 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 1. First ensure that Java 17 is installed to run the game.
 2. Clone this repository by clicking the green 'code' sign on top of this page. Click the SSH key and type in your terminal the following: git clone "the SSH key".
 3. Open up and run the file in IntelliJ.
-4. Open up Postman to start the requests.
+4. Make sure you have SQL downloaded and a database created through Terminal with the command :createdb "name of database".
+5. Open up Postman to start the requests.
 
 # How to play
 
@@ -63,7 +64,12 @@ This table shows all possible requests aswell as an example of their path variab
 
 ## Postman:
 
-(pic)
+<p align="center">
+Postman 
+</p>
+
+![alt text](postman.png)
+
 
 Using postman we can ensure that our game runs as we initially planned. We can use http requests to get automated responses. It is also our way of testing each command and debugging where necessary.
 
@@ -72,7 +78,17 @@ Using postman we can ensure that our game runs as we initially planned. We can u
 
 # Project structure
 
+<p align="center">
+The UML Diagram for our Projec
+</p>
+
 ![alt text](backend_UML.jpg)
+
+
+
+<p align="center">
+The ERD Diagram for our Project
+</p>
 
 ![alt text](backend_ERD.jpg)
 
