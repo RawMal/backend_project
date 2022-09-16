@@ -69,6 +69,9 @@ Using postman we can ensure that our game runs as we initially planned. We can u
 # Project structure
 
 ![alt text](backend_UML.jpg)
+<p align="center">
+The UML Diagram for our Project
+</p>
 
 ![alt text](backend_ERD.jpg)
 
