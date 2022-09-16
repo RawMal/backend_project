@@ -61,7 +61,7 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 ## Postman:
 
 <p align="center">
-Postman 
+
 </p>
 
 ![alt text](postman.png)
