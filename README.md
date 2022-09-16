@@ -63,7 +63,6 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 Postman 
 </p>
 
-![alt text](image.jpg)
 ![alt text](Untitled-2022-09-16-0928.jpg)
 
 
