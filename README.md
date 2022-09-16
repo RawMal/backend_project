@@ -35,14 +35,18 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
    The request body should look like this:
    
    ```{"name":"frodo"}```
-2. Create a post request for a new game 
+2. Create a post request for a new game. 
 3. send a GET request to the shop to see all weapons.
-4. send a patch request to the player to buy a weapon
+4. send a patch request to the player to buy a weapon.
 5. to start a battle send a GET request  
 6. To attack the monster send a PATCH request
-7. After defeating the monster, feel free to head back to the shop, or start a new battle.
+7. After defeating the monster, send a final PATCH request to receive your gold.
+8. Feel free to head back to the shop, or start a new battle.
+9. There are a total of three battles to beat to win the game with increasing difficulty.
 
 ## Request Paths:
+
+This table shows all possible requests aswell as an example of their path variable and/or parameters
 
 | HTTP Request Paths | Request Type | Description |
 |:---:|:---:|:---:|
@@ -76,7 +80,7 @@ Using postman we can ensure that our game runs as we initially planned. We can u
 
 # Further extensions / considerations
 
-- Currently, only one game can be running at a time. This could be 
+-  Our initial idea for this project was to have only one game running at a time. Therefore we did not finish the code for playing a new game after sending a POST request to start a new game. This would require minor tweaks to the code to automatically seed new battles for each game object aswell as to change the win condition to specify each player.
 
-- To make the game more interactive, our nexte extension would have been to provide the player the option to "block" aswell as "attack"
+- To make the game more interactive, our next extension would have been to provide the player the option to "block" aswell as "attack"
 
