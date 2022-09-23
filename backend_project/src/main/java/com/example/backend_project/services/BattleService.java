@@ -33,10 +33,16 @@ public class BattleService {
 
     }
 
+    public boolean newCheckWinCondition(Player player){
+        return player.getNumberOfWins() == 2;
+    }
+
     public Reply processFight(Player player, Battle battle){
-        if (hasPlayerWon(player,battle) && checkWinCondition()){
+        if (hasPlayerWon(player,battle) && newCheckWinCondition(player)){
+            player.setNumberOfWins(player.getNumberOfWins()+1);
             return new Reply("You've defeated all of the monster and won the game! Congratulations, your Journey is Complete");
-        }else if(hasPlayerWon(player,battle) && !checkWinCondition()){
+        }else if(hasPlayerWon(player,battle) && !newCheckWinCondition(player)){
+            player.setNumberOfWins(player.getNumberOfWins()+1);
             player.setHitPoints(100);
             int goldAdded = ThreadLocalRandom.current().nextInt(4,8);
             player.setGold(player.getGold()+goldAdded);
@@ -83,7 +89,6 @@ public class BattleService {
     public boolean hasPlayerWon(Player player, Battle battle) {
         if (player.getHitPoints() > 0 && battle.getMonster().getHitPoints() <= 0) {
             battle.setVictorious(true);
-            player.setNumberOfWins(player.getNumberOfWins()+1);
             battle.getMonster().setAlive(false);
             battleRepository.save(battle);
             return true;

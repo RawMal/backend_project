@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/games")
@@ -29,7 +30,17 @@ public class GameController {
         games = gameService.getGames();
         return new ResponseEntity<>(games, HttpStatus.OK);
     }
-    
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Game> getGameById(@PathVariable long id){
+        Optional<Game> game = gameService.getGameById(id);
+        if (game.isPresent()){
+            return  new ResponseEntity<>(game.get(),HttpStatus.OK);
+        } else {
+            return  new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
+        }
+
+    }
 
 
     @PatchMapping(value = "/{gameId}")

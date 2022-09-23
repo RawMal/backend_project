@@ -1,9 +1,13 @@
 package com.example.backend_project.models;
 
+import com.example.backend_project.repositories.BattleRepository;
+import com.example.backend_project.repositories.MonsterRepository;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity(name = "games")
@@ -44,5 +48,17 @@ public class Game {
 
     public void setBattles(List<Battle> battles) {
         this.battles = battles;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void addBattle(Battle battle){
+        battles.add(battle);
     }
 }

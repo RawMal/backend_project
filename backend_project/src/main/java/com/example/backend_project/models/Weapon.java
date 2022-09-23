@@ -31,12 +31,12 @@ public class Weapon {
     private Shop shop;
 
 
-    public Weapon(String weaponName, int maxDamage, int minDamage, float blockChance, Player player, int price, Shop shop) {
+    public Weapon(String weaponName, int maxDamage, int minDamage, float blockChance, int price, Shop shop) {
         this.weaponName = weaponName;
         this.maxDamage = maxDamage;
         this.minDamage = minDamage;
         this.blockChance = blockChance;
-        this.player = player;
+        this.player = null;
         this.price = price;
         this.shop = shop;
     }
