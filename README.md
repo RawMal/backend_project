@@ -54,6 +54,7 @@ This table shows all possible requests aswell as an example of their path variab
 | .../players?playerId=1&weaponId=1 | PATCH | Allows player to buy a weapon |
 | .../games?playerId=1 | POST | Posts a new game by their ID |
 | .../games | GET | Gets the game |
+| .../games/1 | GET | Gets the game by ID |
 | .../games/combat?battleId=1 | GET | Gets the player to start the battle  |
 | .../games/1?battleId=1 | PATCH | Gets the player to attack |
 
@@ -92,7 +93,9 @@ The ERD Diagram for our Project
 
 # Further extensions / considerations
 
--  Our initial idea for this project was to have only one game running at a time. Therefore we did not finish the code for playing a new game after sending a POST request to start a new game. This would require minor tweaks to the code to automatically seed new battles for each game object as well as to change the win condition to specify the number of battles won by each player.
+-  Our initial idea for this project was to have only one game running at a time. Therefore we did not finish the code for playing a new game. There are bugs related to winning the game for a 2nd player and buying a weapon that another player owns.
 
 - To make the game more interactive, our next extension would have been to provide the player the option to "block" as well as "attack"
+
+
 
