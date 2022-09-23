@@ -35,7 +35,9 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 
    The request body should look like this:
    
-   ```{"name":"frodo"}```
+   ```{"name":"frodo",
+       "level: 1,
+       "hitPoints": 100}```
 2. Create a POST request for a new game. 
 3. send a GET request to the shop to see all weapons.
 4. send a PATCH request to the player to buy a weapon.
