@@ -23,12 +23,12 @@ public class BattleService {
     public Optional<Battle> getBattleById(Long id){
         return battleRepository.findById(id);
     }
-
+//    unused
     public int countVictoriousBattles() {
         return battleRepository.countByIsVictoriousTrue();
     }
 
-    public boolean checkWinCondition(){
+    public boolean oldCheckWinCondition(){
         return countVictoriousBattles() == 3;
 
     }
