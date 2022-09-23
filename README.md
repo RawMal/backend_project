@@ -26,7 +26,7 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 1. First ensure that Java 17 is installed to run the game.
 2. Clone this repository by clicking the green 'code' sign on top of this page. Click the SSH key and type in your terminal the following: `git clone "the SSH key"`.
 3. Open up and run the file in IntelliJ.
-4. Make sure you have SQL downloaded and a database created through Terminal with the command :createdb adventure_game.
+4. Make sure you have SQL downloaded and a database created through Terminal with the command: `createdb adventure_game.`
 5. Open up Postman to start the requests.
 
 # How to play
@@ -34,14 +34,14 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 1. First create a POST request for a new player. 
 
    The request body should look like this:
-   
-   ```
-       {
-       "name":"frodo",
-       "level: 1,
-       "hitPoints": 100
-       }
        ```
+        {
+        "name":"frodo",
+        "level: 1,
+        "hitPoints": 100
+        }
+       ```
+       
 2. Create a POST request for a new game. 
 3. send a GET request to the shop to see all weapons.
 4. send a PATCH request to the player to buy a weapon.
@@ -60,9 +60,9 @@ This table shows all possible requests aswell as an example of their path variab
 | .../players? | POST | Post the player |
 | .../players | GET | Gets the player |
 | .../players/1 | GET | Gets the player by their ID |
-| .../games?playerId=1 | POST | Posts a new game by their ID |
 | .../shops | GET | Shows the shop |
 | .../players?playerId=1&weaponId=1 | PATCH | Allows player to buy a weapon |
+| .../games?playerId=1 | POST | Posts a new game by their ID |
 | .../games | GET | Gets the game |
 | .../games/combat?battleId=1 | GET | Gets the player to start the battle  |
 | .../games/1?battleId=1 | PATCH | Gets the player to attack |
