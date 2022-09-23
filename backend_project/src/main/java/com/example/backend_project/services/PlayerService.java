@@ -23,9 +23,10 @@ public class PlayerService {
     public Optional<Player> getPlayerById(Long id){
         return playerRepository.findById(id);}
 
-    public Player savePlayer(Player player){
-        playerRepository.save(player);
-        return player;
+    public Player savePlayer(String playerName){
+        Player newPlayer = new Player(playerName);
+        playerRepository.save(newPlayer);
+        return newPlayer;
     }
 
     public Reply buyWeapon (Weapon weapon, Long id){

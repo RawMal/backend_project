@@ -42,15 +42,14 @@ public class PlayerController {
     }
 
     @PostMapping
-    public ResponseEntity<Player> addNewPlayer(@RequestBody Player player){
-        Player savedPlayer = playerService.savePlayer(player);
+    public ResponseEntity<Player> addNewPlayer(@RequestParam String name){
+        Player savedPlayer = playerService.savePlayer(name);
         return new ResponseEntity<>(savedPlayer, HttpStatus.CREATED);
 
     }
 
     @PatchMapping
     public ResponseEntity<Reply> goneShopping(@RequestParam long playerId, @RequestParam long weaponId){
-        Player player = playerService.getPlayerById(playerId).get();
         Weapon weapon = weaponService.getWeaponById(weaponId).get();
         return new ResponseEntity<>(playerService.buyWeapon(weapon, playerId), HttpStatus.OK);
     }

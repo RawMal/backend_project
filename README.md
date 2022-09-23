@@ -32,10 +32,6 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
 # How to play
 
 1. First create a Post request for a new player. 
-
-   The request body should look like this:
-   
-   ```{"name":"frodo"}```
 2. Create a post request for a new game. 
 3. send a GET request to the shop to see all weapons.
 4. send a patch request to the player to buy a weapon.
@@ -51,7 +47,7 @@ This table shows all possible requests aswell as an example of their path variab
 
 | HTTP Request Paths | Request Type | Description |
 |:---:|:---:|:---:|
-| .../players? | POST | Post the player |
+| .../players?name=frodo | POST | Post the player |
 | .../players | GET | Gets the player |
 | .../players/1 | GET | Gets the player by their ID |
 | .../games?playerId=1 | POST | Posts a new game by their ID |
