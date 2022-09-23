@@ -37,7 +37,7 @@ Bright Network Technology Academy have tasked the team at Electronic Otters (EO 
        ```
         {
         "name":"frodo",
-        "level: 1,
+        "gold: 2,
         "hitPoints": 100
         }
        ```
